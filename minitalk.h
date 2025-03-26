@@ -6,7 +6,7 @@
 /*   By: amert <amert@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 20:27:20 by amert             #+#    #+#             */
-/*   Updated: 2025/03/16 15:45:57 by amert            ###   ########.fr       */
+/*   Updated: 2025/03/25 14:51:35 by amert            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@
 
 # define ERR_ARGUMENT "there have to be at least 2 arguments"
 # define ERR_PID "pid is not valid"
+# define ERR_SIGACTION "failed to set signal handler"
 
 #endif

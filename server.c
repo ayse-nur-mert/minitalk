@@ -6,7 +6,7 @@
 /*   By: amert <amert@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 20:27:24 by amert             #+#    #+#             */
-/*   Updated: 2025/03/19 13:14:19 by amert            ###   ########.fr       */
+/*   Updated: 2025/03/26 13:40:55 by amert            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,12 @@ int	main(void)
 	sa.sa_sigaction = ft_handler;
 	sa.sa_flags = SA_SIGINFO;
 	sigemptyset(&sa.sa_mask);
-	sigaction(SIGUSR1, &sa, NULL);
-	sigaction(SIGUSR2, &sa, NULL);
+	if (sigaction(SIGUSR1, &sa, NULL) == -1
+		|| sigaction(SIGUSR2, &sa, NULL) == -1)
+	{
+		ft_printf("exited with: %s\n", ERR_SIGACTION);
+		exit(1);
+	}
 	while (1)
 		pause();
 }
